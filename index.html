@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<script>
+
+    function computerPlay() {
+        let min = 0;
+        let max = 3;
+        let num = Math.floor(Math.random() * (max - min) ) + min;
+
+        if (num == 0) {
+            return "rock";
+        } else if (num == 1) {
+            return "scissors";
+        } else if (num == 2) {
+            return "paper";
+        }
+    }
+
+    function play(playerSelection, computerSelection) {
+        console.log(playerSelection);
+
+        console.log(computerSelection);
+        
+        if (playerSelection == computerSelection) {
+            return "You tied! Try again."
+        }
+
+        if (computerSelection == "rock") {
+            if (playerSelection == "paper") {
+                return "You win!";
+            } else {
+                return "You Lose! " + computerSelection+ " beats " + playerSelection;
+            }
+        } else if (computerSelection == "scissors") {
+            if (playerSelection == "rock") {
+                return "You win!";
+            } else {
+                return "You Lose! " + computerSelection+ " beats " + playerSelection;
+            }
+        } else if (computerSelection == "paper") {
+            if (playerSelection == "scissors") {
+                return "You win!";
+            } else {
+                return "You Lose! " + computerSelection+ " beats " + playerSelection;
+            }
+        }
+    }
+
+    function game() {
+        const playerSelection = prompt("Enter Rock/Paper/Scissors");
+        const computerSelection = computerPlay()
+        console.log(play(playerSelection, computerSelection))
+    }
+
+    for (i = 0; i < 5; i++) {
+        game()
+    }    
+</script>
