@@ -140,15 +140,5 @@
     function keepScore() {
         document.getElementById('playerScore').textContent = playerScore;
         document.getElementById('computerScore').textContent = computerScore;
-
-        if (playerScore >= 5) {
-            playerScore = 0;
-            computerScore = 0;
-            alert("Congratulations! You win!");
-        } else if (computerScore >=5) {
-            playerScore = 0;
-            computerScore = 0;
-            alert("You lose!");
-        }
     }
 </script>
